@@ -29,7 +29,7 @@ MAIN FEATURES
 GAME CHARACTERS
 ---------------
 - owlet 
-- Training Dummy
+- dr.library 
 - Merchant Pixie
 
 GAME PROGRESSION
