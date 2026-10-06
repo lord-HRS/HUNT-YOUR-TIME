@@ -11,7 +11,7 @@ and unlocks rewards.
 MAIN FEATURES
 -------------
 1. Pixel-art adventure game interface.
-2. Player HUD showing level, XP, coins, and streak.
+2. Player HUD  showing level, XP, coins, and streak.
 3. "I'm Free" feature for starting a productive activity.
 4. Quest creation and quest selection.
 5. AI Master feature for generating a mission plan.
