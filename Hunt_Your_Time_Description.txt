@@ -30,8 +30,8 @@ MAIN FEATURES
 GAME CHARACTERS
 ---------------
 - Barnaby the Owl Wizard
-- Merchant Pixie
 - Training Dummy
+- Merchant Pixie
 
 GAME PROGRESSION
 ----------------
