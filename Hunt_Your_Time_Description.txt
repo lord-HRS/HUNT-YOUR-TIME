@@ -111,7 +111,7 @@ authentication, HUD, navigation, buttons, and modals.
 DEMO LOGIN
 ----------
 Email: demo@huntyourtime.com
-Password: 123456
+Password: 123456789
 
 HOW TO RUN
 ----------
