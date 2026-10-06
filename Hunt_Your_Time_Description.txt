@@ -1,0 +1,128 @@
+HUNT YOUR TIME
+===============================
+
+PROJECT DESCRIPTION
+-------------------
+Hunt Your Time is a pixel-art productivity adventure game designed to turn
+free time into productive missions. The player explores a game world,
+creates and completes quests, earns XP and coins, maintains a streak,
+and unlocks rewards.
+
+MAIN FEATURES
+-------------
+1. Pixel-art adventure game interface.
+2. Player HUD showing level, XP, coins, and streak.
+3. "I'm Free" feature for starting a productive activity.
+4. Quest creation and quest selection.
+5. AI Master feature for generating a mission plan.
+6. Weekend planning feature.
+7. Quest timer with pause and time-boost functionality.
+8. Reward Castle and reward shop.
+9. Unlockable rewards and game progression.
+10. Dialogue system with game characters.
+11. Background music and pixel-style sound effects.
+12. Multiple game environments/biomes such as day, sunset, night,
+    and dungeon-style areas.
+13. Local browser storage for saving game progress.
+14. Mobile-friendly game controls and on-screen gamepad.
+
+GAME CHARACTERS
+---------------
+- Barnaby the Owl Wizard
+- Merchant Pixie
+- Training Dummy
+
+GAME PROGRESSION
+----------------
+Players complete productivity quests to earn experience points (XP)
+and coins. XP contributes to level progression, while coins can be
+used for rewards. The game also tracks the player's streak.
+
+REWARD SYSTEM
+-------------
+The reward shop includes game rewards such as:
+- Streak Shield
+- Time Boost
+- Double XP
+- Quest Skip
+- Mystery Chest
+- Unlockable sunset/night biomes
+
+TECHNICAL STRUCTURE
+-------------------
+The project is a client-side browser game built with HTML, CSS, and
+JavaScript.
+
+Folder structure:
+
+Hunt_Your_Time_READY/
+|
+|-- index.html
+|-- README.txt
+|
+|-- css/
+|   `-- style.css
+|
+`-- js/
+    |-- audio.js
+    |-- storage.js
+    |-- pixel-canvas.js
+    |-- quests.js
+    |-- shop.js
+    |-- dialogue.js
+    `-- game.js
+
+FILE PURPOSES
+-------------
+index.html
+Main game page and user interface.
+
+css/style.css
+Contains the visual design, pixel-art styling, HUD, game screens,
+modals, buttons, environments, and responsive/mobile styling.
+
+js/audio.js
+Handles game audio, sound effects, and background music using the
+browser's Web Audio functionality.
+
+js/storage.js
+Handles local browser storage, user/account information, game
+progress, quests, rewards, XP, coins, and streak data.
+
+js/pixel-canvas.js
+Controls the pixel-art game world, player character, NPCs, coins,
+particles, movement, and interaction.
+
+js/quests.js
+Handles quest selection, weekend plans, AI mission plans, quest
+timers, pause functionality, time boosts, and quest completion.
+
+js/shop.js
+Handles the reward shop, reward items, and biome-related rewards.
+
+js/dialogue.js
+Contains RPG-style dialogue and dialogue interactions for the
+game characters.
+
+js/game.js
+Main game controller. Connects the interface, canvas, game state,
+authentication, HUD, navigation, buttons, and modals.
+
+DEMO LOGIN
+----------
+Email: demo@huntyourtime.com
+Password: 123456
+
+HOW TO RUN
+----------
+1. Extract the Hunt_Your_Time_READY ZIP file.
+2. Open the Hunt_Your_Time_READY folder.
+3. Keep the css and js folders in their original locations.
+4. Double-click index.html.
+5. Open the game in a modern browser such as Google Chrome or Microsoft Edge.
+
+IMPORTANT NOTE
+--------------
+This is a client-side browser game. The supplied project does not
+include a server or external database. Game/account data is stored
+in the browser's localStorage.
