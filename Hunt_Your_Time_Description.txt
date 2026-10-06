@@ -18,7 +18,7 @@ MAIN FEATURES
 6. Weekend planning feature.
 7. Quest timer with pause and time-boost functionality.
 8. Reward Castle and reward shop.
-9. Unlockable rewards and game progression.
+9. Unlockable  rewards and game progression.
 10. Dialogue system with game characters.
 11. Background music and pixel-style sound effects.
 12. Multiple game environments/biomes such as day, sunset, night,
