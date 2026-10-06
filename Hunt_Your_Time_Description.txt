@@ -121,8 +121,4 @@ HOW TO RUN
 4. Double-click index.html.
 5. Open the game in a modern browser such as Google Chrome or Microsoft Edge.
 
-IMPORTANT NOTE
---------------
-This is a client-side browser game. The supplied project does not
-include a server or external database. Game/account data is stored
-in the browser's localStorage.
+
