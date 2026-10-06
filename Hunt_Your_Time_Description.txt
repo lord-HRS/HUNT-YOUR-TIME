@@ -124,3 +124,8 @@ HOW TO RUN
 ### Important Note
 
 This is a **client-side browser game**, so it does not use a server or external database. For this project, account information, progress, quests, Time Coins, streaks, and other game data are stored locally in the user's browser using **localStorage**. This keeps the project simple, lightweight, and suitable for our basic web-development project.
+
+
+**How Hunt Your Time Helps You**
+
+
