@@ -121,4 +121,6 @@ HOW TO RUN
 4. Double-click index.html.
 5. Open the game in a modern browser such as Google Chrome or Microsoft Edge.
 
+### Important Note
 
+This is a **client-side browser game**, so it does not use a server or external database. For this project, account information, progress, quests, Time Coins, streaks, and other game data are stored locally in the user's browser using **localStorage**. This keeps the project simple, lightweight, and suitable for our basic web-development project.
