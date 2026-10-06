@@ -128,4 +128,5 @@ This is a **client-side browser game**, so it does not use a server or external 
 
 **How Hunt Your Time Helps You**
 
+Hunt Your Time helps users make better use of the time they already have. Instead of wasting free time wondering what to do or forgetting important tasks, users can save their goals, activities, reminders, and plans in one place. When they have free progress.**
 
