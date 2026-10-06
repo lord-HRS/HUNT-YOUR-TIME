@@ -24,7 +24,6 @@ MAIN FEATURES
 12. Multiple game environments/biomes such as day, sunset, night,
     and dungeon-style areas.
 13. Mobile-friendly game controls and on-screen gamepad.
-
 14. Local browser storage for saving game progress.
 
 GAME CHARACTERS
