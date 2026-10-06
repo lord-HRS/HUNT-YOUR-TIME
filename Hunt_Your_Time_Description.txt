@@ -118,6 +118,7 @@ HOW TO RUN
 1. Extract the Hunt_Your_Time_READY ZIP file.
 2. Open the Hunt_Your_Time_READY folder.
 3. Keep the css and js folders in their original locations.
+
 4. Double-click index.html.
 5. Open the game in a modern browser such as Google Chrome or Microsoft Edge.
 
