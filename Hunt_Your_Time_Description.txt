@@ -3,7 +3,7 @@ HUNT YOUR TIME
 
 PROJECT DESCRIPTION
 -------------------
-Hunt Your Time is a pixel-art productivity  adventure game designed to turn
+Hunt Your Time is a  pixel-art productivity  adventure game designed to turn
 free time into productive missions. The player explores a game world,
 creates and completes quests, earns XP and coins, maintains a streak,
 and unlocks rewards.
