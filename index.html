@@ -8,70 +8,22 @@
   
   <!-- CSS Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
-
+  
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23ffcd00' d='M2 1h4v1H2zM1 2h6v4H1zM2 6h4v1H2z'/%3E%3C/svg%3E">
 </head>
 <body>
 
- <!-- ==========================================================================
-       MAIN VISUAL IDENTITY — FIXED FULL-SCREEN CINEMATIC PIXEL-ART BACKGROUND VIDEO
+  <!-- ==========================================================================
+       MAIN VISUAL IDENTITY — FIXED FULL-SCREEN CINEMATIC VIDEO (hutbgvid.mp4)
        ========================================================================== -->
-    <video id="bg-video" autoplay muted loop playsinline poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Crect width='100%25' height='100%25' fill='%230f0b1e'/%3E%3C/svg%3E">
-    <source src="https://assets.mixkit.co/videos/preview/mixkit-pixel-art-looping-landscape-41551-large.mp4" type="video/mp4">
-    <source src="https://cdn.pixabay.com/video/2021/04/12/70929-537449553_tiny.mp4" type="video/mp4">
+  <video id="bg-video" autoplay muted loop playsinline preload="auto">
+    <source src="hutbgvid.mp4" type="video/mp4">
   </video>
 
-  <!-- Canvas Fallback Renderer for Offline Video Stream -->
-  <canvas id="bg-video-fallback-canvas"></canvas>
+  <!-- SUBTLE DARK OVERLAY -->
+  <div id="bg-overlay"></div>
 
-    <!-- SUBTLE DARK/COLORED OVERLAY -->
-    <div id="bg-overlay"></div>
-
-    <!-- ==========================================================================
-       LANDING PAGE (CINEMATIC HERO & STORYTELLING EXPERIENCE)
-       ========================================================================== -->
-  <main id="landing-page">
-
-     <!-- SECTION 01: CINEMATIC HERO -->
-    <section id="hero-section">
-      <h1 class="hero-title">HUNT YOUR TIME</h1>
-     <div class="hero-tagline">"TURN YOUR FREE TIME INTO YOUR MISSION"</div>
-
-    <div class="hero-cta-group">
-      <button class="hud-btn hud-btn-gold hero-btn" id="btn-enter-game">
-       ⚔️ ENTER THE GAME
-        </button>
-        <button class="hud-btn hero-btn" id="btn-watch-trailer">
-         🎬 WATCH TRAILER
-        </button>
-        <button class="hud-btn" id="btn-bg-audio-toggle" style="background: rgba(15, 11, 30, 0.8);">
-          <span id="bg-audio-icon">🔇</span> SOUND
-        </button>
-      </div>
-
-      <div class="scroll-indicator" id="btn-scroll-hero-down">
-        ⬇️ SCROLL TO EXPLORE STORY ⬇️
-      </div>
-    </section>
-
-    <!-- SECTION 02: THE PROBLEM -->
-    <section class="story-section" id="section-problem">
-     <div class="section-label">SECTION 02 // THE PROBLEM</div>
- <h2 class="section-title">WHERE DOES YOUR FREE TIME GO?</h2>
-    <div class="story-card">
-          <p class="story-text">
-          Every single day, hours of free time slip away quietly... 15 minutes waiting between meetings, 30 minutes scrolling on your phone, or 1 hour wondering what to do next.
-        </p>
-        <p class="story-text">
-          Without clear focus, your free time gets lost in distraction instead of building your next big goal.
-        </p>
-      </div>
-    </section>   
-
-     <!-- SECTION 03: THE SOLUTION -->
-       <section class="story-section" id="section-solution">
-      <div class="section-label">SECTION 03 // THE SOLUTION</div>
 
   
   
