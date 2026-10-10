@@ -129,5 +129,5 @@ This is a **client-side browser game**, so it does not use a server or external 
 
 **How Hunt Your Time Helps You**
 
-Hunt Your Time helps users make better use of the time they already have. Instead of wasting free time wondering what to do or forgetting important tasks, users can save their goals, activities, reminders, and plans in one place. When they have free progress.**time, the “I’m Free”** feature suggests a suitable mission based on how much time they have. With **streaks, XP, Time Coins, rewards, and progress tracking**, everyday activities become more motivating and fun. In simple words, **Hunt Your Time helps users plan their time, stay consistent, and turn free time into meaningful 
+Hunt Your Time helps users make better use of the time they already have. Instead of wasting free time wondering what to do or forgetting important tasks, users can save their goals, activities, reminders, and plans in one place. When they have free progress.**time, the “I’m Free”** feature suggests a suitable mission based on how much time they have. With **streaks, XP, Time Coins, rewards, and progress tracking**, everyday activities become more motivating and fun. In simple words, **Hunt Your Time helps users plan their time,  stay consistent, and turn free time into meaningful 
 
