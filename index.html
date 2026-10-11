@@ -195,4 +195,51 @@
       </div>
     </div>
 
+    <!-- HUD STATUS CARD -->
+    <div id="game-hud-bar">
+      <div class="pixel-box player-hud-card">
+        <div class="avatar-frame" id="btn-hud-avatar" title="Character Profile">
+          <span class="avatar-img" id="hud-avatar-icon" style="font-size: 26px;">🛡️</span>
+        </div>
+        <div class="player-details">
+          <div class="player-name-row">
+            <span class="player-name" id="hud-player-name">TimeHunter_01</span>
+            <span class="level-badge" id="hud-player-level">LVL 1</span>
+          </div>
+          <div style="font-family: var(--font-retro); font-size: 9px; color: var(--ui-gold);" id="hud-rank-title">ROOKIE HUNTER</div>
+          <div class="xp-bar-container">
+            <div class="xp-bar-fill" id="hud-xp-fill"></div>
+            <div class="xp-text" id="hud-xp-text">0 / 200 XP</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 10px; align-items: center;">
+        <div class="pixel-box pixel-box-gold currency-widget">
+          <span class="pixel-icon coin-icon"></span>
+          <span id="hud-coins" style="color: var(--ui-gold); font-size: 11px;">100</span>
+        </div>
+        
+        <div class="pixel-box streak-widget">
+          <span class="pixel-icon fire-icon"></span>
+          <span id="hud-streak" style="color: #ff6600; font-size: 11px;">0d</span>
+        </div>
+
+        <button class="hud-btn" id="btn-game-sfx-toggle" title="Toggle Sound FX">🔊 SFX</button>
+        <button class="hud-btn" id="btn-game-music-toggle" title="Toggle Music">🎵 MUSIC</button>
+      </div>
+    </div>
+
+    <!-- CATEGORY FILTER BAR -->
+    <div style="display: flex; gap: 6px; overflow-x: auto; padding: 4px 0; z-index: 25; pointer-events: auto;">
+      <button class="hud-btn btn-cat-filter active" data-cat="ALL">ALL</button>
+      <button class="hud-btn btn-cat-filter" data-cat="Study">📚 Study</button>
+      <button class="hud-btn btn-cat-filter" data-cat="Play">🎮 Play</button>
+      <button class="hud-btn btn-cat-filter" data-cat="Meetings">📅 Meetings</button>
+      <button class="hud-btn btn-cat-filter" data-cat="Fitness">🏋 Fitness</button>
+      <button class="hud-btn btn-cat-filter" data-cat="Social">❤️ Social</button>
+      <button class="hud-btn btn-cat-filter" data-cat="Personal">🎯 Personal</button>
+      <button class="hud-btn btn-cat-filter" data-cat="Other">🌀 Misc</button>
+    </div>
+
     
