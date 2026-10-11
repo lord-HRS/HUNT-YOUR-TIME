@@ -280,4 +280,28 @@
     </div>
   </div>
 
- 
+  <!-- ==========================================================================
+       MODALS & OVERLAYS
+       ========================================================================== -->
+
+  <!-- MODAL 0: CINEMATIC TRAILER OVERLAY -->
+  <div class="pixel-modal-backdrop" id="modal-trailer">
+    <div class="pixel-modal">
+      <div class="modal-header">
+        <div class="modal-title">🎬 OFFICIAL CINEMATIC TRAILER</div>
+        <button class="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body" style="align-items: center; text-align: center;">
+        <video id="trailer-modal-video" controls autoplay muted playsinline poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Crect width='100%25' height='100%25' fill='%230f0b1e'/%3E%3C/svg%3E">
+          <source src="https://assets.mixkit.co/videos/preview/mixkit-pixel-art-looping-landscape-41551-large.mp4" type="video/mp4">
+        </video>
+        <div style="display: flex; gap: 10px; margin-top: 10px;">
+          <button class="hud-btn" id="btn-trailer-toggle-mute">🔊 UNMUTE AUDIO</button>
+          <button class="hud-btn modal-close-btn" style="width: auto; padding: 8px 16px;">CLOSE TRAILER</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
