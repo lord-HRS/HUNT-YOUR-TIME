@@ -383,3 +383,56 @@
       <div class="modal-body" id="weekend-plan-content"></div>
     </div>
   </div>
+
+  <!-- MODAL 4: + CREATE QUEST -->
+  <div class="pixel-modal-backdrop" id="modal-create-quest">
+    <div class="pixel-modal">
+      <div class="modal-header">
+        <div class="modal-title">➕ CREATE NEW QUEST</div>
+        <button class="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="form-create-quest" style="display: flex; flex-direction: column; gap: 10px;">
+          <div class="pixel-box">
+            <label style="font-size: 9px; color: var(--ui-gold);">QUEST NAME:</label>
+            <input type="text" id="quest-name" required placeholder="e.g. Build React Component" style="width: 100%; padding: 8px; font-family: var(--font-retro); font-size: 11px; background: #110d21; color: #fff; border: 2px solid #000; margin-top: 4px;">
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <div class="pixel-box">
+              <label style="font-size: 9px; color: var(--ui-gold);">CATEGORY:</label>
+              <select id="quest-category" style="width: 100%; padding: 8px; font-family: var(--font-retro); font-size: 11px; background: #110d21; color: #fff; border: 2px solid #000; margin-top: 4px;">
+                <option value="Coding">Coding</option>
+                <option value="Study">Study</option>
+                <option value="Fitness">Fitness</option>
+                <option value="Friends">Friends</option>
+                <option value="Social">Social</option>
+                <option value="Personal">Personal</option>
+                <option value="Learning">Learning</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="pixel-box">
+              <label style="font-size: 9px; color: var(--ui-gold);">DURATION (MINS):</label>
+              <input type="number" id="quest-duration" min="5" max="480" value="30" required style="width: 100%; padding: 8px; font-family: var(--font-retro); font-size: 11px; background: #110d21; color: #fff; border: 2px solid #000; margin-top: 4px;">
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <div class="pixel-box">
+              <label style="font-size: 9px; color: var(--ui-gold);">DIFFICULTY:</label>
+              <select id="quest-difficulty" style="width: 100%; padding: 8px; font-family: var(--font-retro); font-size: 11px; background: #110d21; color: #fff; border: 2px solid #000; margin-top: 4px;">
+                <option value="Easy">Easy (+25 XP, +10 Gold)</option>
+                <option value="Medium" selected>Medium (+50 XP, +25 Gold)</option>
+                <option value="Hard">Hard (+100 XP, +50 Gold)</option>
+                <option value="Epic">Epic (+200 XP, +100 Gold)</option>
+              </select>
+            </div>
+            <div class="pixel-box">
+              <label style="font-size: 9px; color: var(--ui-gold);">TARGET DATE:</label>
+              <input type="date" id="quest-date" style="width: 100%; padding: 8px; font-family: var(--font-retro); font-size: 11px; background: #110d21; color: #fff; border: 2px solid #000; margin-top: 4px;">
+            </div>
+          </div>
+          <button type="submit" class="hud-btn hud-btn-primary" style="padding: 12px; margin-top: 4px;">POST BOUNTY TO QUEST LOG</button>
+        </form>
+      </div>
+    </div>
+  </div>
