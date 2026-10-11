@@ -492,3 +492,25 @@
       </div>
     </div>
   </div>
+
+   <!-- MODAL 7: ACTIVE TIMER -->
+  <div class="pixel-modal-backdrop" id="modal-active-timer">
+    <div class="pixel-modal">
+      <div class="modal-header">
+        <div class="modal-title">⚔️ ACTIVE MISSION IN PROGRESS</div>
+      </div>
+      <div class="modal-body">
+        <div class="timer-display-box" style="background: #0d0a1a; border: 4px solid var(--ui-gold); padding: 20px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px;">
+          <div class="timer-mission-title" id="active-timer-title" style="font-size: 13px; color: var(--color-electric);">Code Dungeon Raid</div>
+          <div style="font-family: var(--font-retro); font-size: 11px; color: #aaa;" id="active-timer-desc">Focus deeply on your mission task.</div>
+          <div class="timer-digits" id="active-timer-digits" style="font-size: 48px; color: var(--ui-gold); letter-spacing: 4px;">30:00</div>
+          <div class="timer-controls" style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+            <button class="hud-btn" id="btn-timer-pause">⏸ PAUSE</button>
+            <button class="hud-btn" id="btn-timer-boost" style="background: #8b008b;">⚡ BOOST (-5M)</button>
+            <button class="hud-btn hud-btn-primary" id="btn-timer-complete">✔ COMPLETE</button>
+            <button class="hud-btn" id="btn-timer-abandon" style="background: var(--ui-red);">ABANDON</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
