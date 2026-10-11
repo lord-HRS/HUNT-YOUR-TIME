@@ -436,3 +436,42 @@
       </div>
     </div>
   </div>
+
+  <!-- MODAL 5: EDIT QUEST -->
+  <div class="pixel-modal-backdrop" id="modal-edit-quest">
+    <div class="pixel-modal">
+      <div class="modal-header">
+        <div class="modal-title">✏️ EDIT QUEST INFORMATION</div>
+        <button class="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="form-edit-quest" style="display: flex; flex-direction: column; gap: 10px;">
+          <input type="hidden" id="edit-quest-id">
+          <div class="pixel-box">
+            <label style="font-size: 9px; color: var(--ui-gold);">QUEST NAME:</label>
+            <input type="text" id="edit-quest-name" required style="width: 100%; padding: 8px; font-family: var(--font-retro); font-size: 11px; background: #110d21; color: #fff; border: 2px solid #000; margin-top: 4px;">
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <div class="pixel-box">
+              <label style="font-size: 9px; color: var(--ui-gold);">CATEGORY:</label>
+              <select id="edit-quest-category" style="width: 100%; padding: 8px; font-family: var(--font-retro); font-size: 11px; background: #110d21; color: #fff; border: 2px solid #000; margin-top: 4px;">
+                <option value="Coding">Coding</option>
+                <option value="Study">Study</option>
+                <option value="Fitness">Fitness</option>
+                <option value="Friends">Friends</option>
+                <option value="Social">Social</option>
+                <option value="Personal">Personal</option>
+                <option value="Learning">Learning</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="pixel-box">
+              <label style="font-size: 9px; color: var(--ui-gold);">DURATION (MINS):</label>
+              <input type="number" id="edit-quest-duration" min="5" max="480" required style="width: 100%; padding: 8px; font-family: var(--font-retro); font-size: 11px; background: #110d21; color: #fff; border: 2px solid #000; margin-top: 4px;">
+            </div>
+          </div>
+          <button type="submit" class="hud-btn hud-btn-primary" style="padding: 10px; margin-top: 4px;">SAVE CHANGES</button>
+        </form>
+      </div>
+    </div>
+  </div>
