@@ -563,3 +563,22 @@
     </div>
   </div>
   
+<!-- MODAL 11: SAVED DISCOVERIES -->
+  <div class="pixel-modal-backdrop" id="modal-saved-links">
+    <div class="pixel-modal">
+      <div class="modal-header">
+        <div class="modal-title">📽️ SAVED DISCOVERIES</div>
+        <button class="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="form-save-link" style="display: flex; flex-direction: column; gap: 8px;" class="pixel-box">
+          <div style="font-size: 9px; color: var(--ui-gold);">SAVE YOUTUBE / INSTAGRAM URL:</div>
+          <input type="text" id="link-title" required placeholder="Video or Article Title" style="padding: 8px; font-family: var(--font-retro); font-size: 11px; background: #110d21; color: #fff; border: 2px solid #000;">
+          <input type="url" id="link-url" required placeholder="https://youtube.com/..." style="padding: 8px; font-family: var(--font-retro); font-size: 11px; background: #110d21; color: #fff; border: 2px solid #000;">
+          <button type="submit" class="hud-btn hud-btn-primary">SAVE DISCOVERY</button>
+        </form>
+        <div id="saved-links-list" style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px;"></div>
+      </div>
+    </div>
+  </div>
+  
