@@ -82,3 +82,12 @@ body {
   top: var(--space);
   right: var(--space);
 }
+
+#app {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  padding: 4rem var(--space) 7rem !important;
+  background: rgba(13, 10, 26, .28);
+}
+
