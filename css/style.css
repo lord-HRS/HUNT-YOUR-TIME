@@ -57,3 +57,9 @@ body {
   background: linear-gradient(180deg, rgba(13, 10, 26, .25), rgba(13, 10, 26, .7));
   pointer-events: none;
 }
+
+.hero-content {
+  padding: 1rem;
+  text-align: center;
+  text-shadow: 3px 3px #0d0a1a;
+}
