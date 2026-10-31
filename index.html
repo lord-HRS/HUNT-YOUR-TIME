@@ -1,351 +1,102 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>HUNT YOUR TIME - Turn Free Time Into Your Mission</title>
-  <meta name="description" content="Turn your free time into your mission in this cinematic playable pixel-art adventure productivity game!">
-  
-  <!-- CSS Stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
-  
-  <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23ffcd00' d='M2 1h4v1H2zM1 2h6v4H1zM2 6h4v1H2z'/%3E%3C/svg%3E">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hunt Your Time</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-
-  <!-- ==========================================================================
-       MAIN VISUAL IDENTITY — FIXED FULL-SCREEN CINEMATIC VIDEO (hutbgvid.mp4)
-       ========================================================================== -->
   <video id="bg-video" autoplay muted loop playsinline preload="auto">
     <source src="hutbgvid.mp4" type="video/mp4">
   </video>
-
-  <!-- SUBTLE DARK OVERLAY -->
-  <div id="bg-overlay"></div>
-
-  <!-- TOP CORNER RETRO PIXEL-ART SOUND TOGGLE BUTTON -->
-  <button id="btn-opening-sound-toggle" class="hud-btn opening-sound-btn" aria-label="Toggle Audio">
-    <span id="bg-audio-icon">🔇</span> <span id="bg-audio-text">SOUND OFF</span>
-  </button>
-
-  <!-- ==========================================================================
-       LANDING PAGE (CINEMATIC OPENING & STORYTELLING EXPERIENCE)
-       ========================================================================== -->
-  <main id="landing-page">
-
-    <!-- VIEWPORT 01: PURE CINEMATIC VIDEO OPENING SCREEN (NO UI OVERLAY) -->
-    <section id="opening-hero-viewport"></section>
-
-    <!-- VIEWPORT 02 / SECTION 01: CINEMATIC TITLE & TAGLINE REVEAL -->
-    <section class="story-section" id="section-title-reveal" style="min-height: 80vh; justify-content: center; align-items: center; text-align: center;">
-      <h1 class="hero-title">HUNT YOUR TIME</h1>
-      <div class="hero-tagline">"TURN YOUR FREE TIME INTO YOUR MISSION"</div>
-    </section>
-
-    <!-- SECTION 02: THE PROBLEM -->
-    <section class="story-section" id="section-problem">
-      <div class="section-label">SECTION 02 // THE PROBLEM</div>
-      <h2 class="section-title">WHERE DOES YOUR FREE TIME GO?</h2>
-      <div class="story-card">
-        <p class="story-text">
-          Every single day, hours of free time slip away quietly... 15 minutes waiting between meetings, 30 minutes scrolling on your phone, or 1 hour wondering what to do next.
-        </p>
-        <p class="story-text">
-          Without clear focus, your free time gets lost in distraction instead of building your next big goal.
-        </p>
+  <div class="shade"></div>
+  <section class="hero" aria-label="Hunt Your Time">
+    <div class="hero-content">
+      <p class="eyebrow">A FANTASY PRODUCTIVITY QUEST</p>
+      <h1>⚔ HUNT YOUR TIME</h1>
+      <button type="button" class="btn pixel sound-control" id="sound" aria-pressed="false">🔇 SOUND OFF</button>
+    </div>
+    <a class="scroll" href="#app" aria-label="Scroll to begin">↓ SCROLL TO BEGIN ↓</a>
+  </section>
+  <main id="app" class="container-fluid py-3">
+    <header class="bar d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+      <h2>YOUR ADVENTURE BOARD</h2>
+      <span class="drink">🥫 <b id="drinks">340</b> SOULE DRINKS</span>
+    </header>
+    <section class="panel d-flex flex-wrap justify-content-between align-items-center gap-3 mb-3">
+      <div>MISSIONS <span id="count">0</span> · COMPLETED <span id="done">0</span></div>
+      <div class="d-flex gap-2">
+        <button type="button" class="btn pixel gold" data-bs-toggle="modal" data-bs-target="#taskModal" id="newTask">+ CREATE MISSION</button>
+        <button type="button" class="btn pixel cyan" data-bs-toggle="modal" data-bs-target="#freeModal">I'M FREE</button>
       </div>
     </section>
-
-    <!-- SECTION 03: THE SOLUTION -->
-    <section class="story-section" id="section-solution">
-      <div class="section-label">SECTION 03 // THE SOLUTION</div>
-      <h2 class="section-title">TURN IDLE MINUTES INTO LEGENDARY MISSIONS</h2>
-      <div class="story-card">
-        <p class="story-text">
-          <strong>HUNT YOUR TIME</strong> transforms time management into a playable pixel-art adventure game!
-        </p>
-        <p class="story-text">
-          You are a <strong>TIME HUNTER</strong>. Your tasks are <strong>QUESTS</strong>. Free time is a <strong>HUNT</strong>. Your progress is measured in <strong>XP & TIME COINS</strong>.
-        </p>
-      </div>
-    </section>
-
-    <!-- SECTION 04: HOW IT WORKS -->
-    <section class="story-section" id="section-how-it-works">
-      <div class="section-label">SECTION 04 // GAME SYSTEM</div>
-      <h2 class="section-title">HOW THE HUNT WORKS</h2>
-      <div class="steps-grid">
-        <div class="step-card">
-          <div class="step-num">01</div>
-          <div style="font-size: 11px; color: var(--ui-gold);">FREE TIME</div>
-          <div class="step-desc">Spot a spare block of minutes in your day.</div>
-        </div>
-        <div class="step-card">
-          <div class="step-num">02</div>
-          <div style="font-size: 11px; color: var(--ui-gold);">CHOOSE TIME</div>
-          <div class="step-desc">Select 15m, 30m, 1h, 2h, or Weekend.</div>
-        </div>
-        <div class="step-card">
-          <div class="step-num">03</div>
-          <div style="font-size: 11px; color: var(--ui-gold);">GET MISSION</div>
-          <div class="step-desc">Receive an auto-matched quest bounty.</div>
-        </div>
-        <div class="step-card">
-          <div class="step-num">04</div>
-          <div style="font-size: 11px; color: var(--ui-gold);">COMPLETE</div>
-          <div class="step-desc">Focus & complete the active quest timer.</div>
-        </div>
-        <div class="step-card">
-          <div class="step-num">05</div>
- <div style="font-size: 11px; color: var(--ui-gold);">EARN REWARDS</div>
-          <div class="step-desc">Gain XP, Level Up & collect Time Coins!</div>
-        </div>
-      </div>
-    </section>
-
- <!-- SECTION 05: I'M FREE FEATURE -->
-    <section class="story-section" id="section-im-free">
-      <div class="section-label">SECTION 05 // CORE FEATURE</div>
-      <h2 class="section-title">⚡ THE "I'M FREE" ENGINE</h2>
-      <div class="story-card">
-        <p class="story-text">
-          Tell Hunt Your Time exactly how much spare time you have right now:
-        </p>
-        <div class="steps-grid" style="grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); margin: 10px 0;">
-          <button class="hud-btn btn-demo-time" data-mins="15">15 MIN</button>
-          <button class="hud-btn btn-demo-time" data-mins="30">30 MIN</button>
-          <button class="hud-btn btn-demo-time" data-mins="60">1 HOUR</button>
-          <button class="hud-btn btn-demo-time" data-mins="120">2 HOURS</button>
-          <button class="hud-btn btn-demo-time" data-mins="240">FULL DAY</button>
-          <button class="hud-btn btn-demo-time" data-mins="weekend" style="background: #6e1c44;">WEEKEND</button>
-        </div>
-        <p class="story-text" style="font-size: 12px; color: var(--ui-gold);">
-          The engine automatically matches your active bounties and builds your focus path!
-        </p>
-      </div>
-    </section> <!-- code end restart--> 
-
-     <!-- SECTION 06: GAME SYSTEM -->
-    <section class="story-section" id="section-rewards">
-      <div class="section-label">SECTION 06 // REWARD CASTLE</div>
-      <h2 class="section-title">LEVEL UP & EARN REWARDS</h2>
-      <div class="story-card">
-        <p class="story-text">
-          Spend hard-earned <strong>Time Coins</strong> in the <strong>Reward Castle</strong> for powerful artifacts:
-        </p>
- <div class="category-badges-grid">
-          <div class="category-badge">🛡️ Streak Shield</div>
-          <div class="category-badge">⚡ Time Boost (-5m)</div>
-          <div class="category-badge">⭐ Double XP</div>
-          <div class="category-badge">⏭️ Quest Skip</div>
-          <div class="category-badge">🎁 Mystery Chest</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 07: QUEST CATEGORIES -->
-    <section class="story-section" id="section-categories">
-      <div class="section-label">SECTION 07 // QUEST CATEGORIES</div>
-      <h2 class="section-title">7 QUEST DISCIPLINE REALMS</h2>
-      <div class="category-badges-grid">
-        <div class="category-badge">📚 STUDY</div>
-        <div class="category-badge">🎮 PLAY</div>
-        <div class="category-badge">📅 MEETINGS</div>
-        <div class="category-badge">🏋 FITNESS</div>
-        <div class="category-badge">❤️ SOCIAL</div>
-        <div class="category-badge">🎯 PERSONAL</div>
-        <div class="category-badge">🌀 MISC</div>
-      </div>
-    </section>
-
-    <!-- SECTION 08: ENTER THE WORLD -->
-    <section class="story-section" id="section-enter" style="text-align: center; align-items: center;">
-      <div class="section-label">SECTION 08 // READY TO HUNT?</div>
-      <h2 class="section-title">ENTER THE HUNT YOUR TIME REALM</h2>
-      <button class="hud-btn hud-btn-gold hero-btn" id="btn-start-hunting" style="padding: 18px 36px; font-size: 14px; margin-top: 15px;">
-        ⚔️ START HUNTING NOW
-      </button>
-    </section>
-
+    <nav id="filters" class="d-flex flex-wrap gap-2 mb-3" aria-label="Mission categories">
+      <button type="button" class="btn pixel active" data-category="ALL">ALL</button>
+      <button type="button" class="btn pixel" data-category="Study">STUDY</button>
+      <button type="button" class="btn pixel" data-category="Play">PLAY</button>
+      <button type="button" class="btn pixel" data-category="Meetings">MEETINGS</button>
+      <button type="button" class="btn pixel" data-category="Fitness">FITNESS</button>
+      <button type="button" class="btn pixel" data-category="Social">SOCIAL</button>
+      <button type="button" class="btn pixel" data-category="Personal">PERSONAL</button>
+      <button type="button" class="btn pixel" data-category="Miscellaneous">MISC</button>
+    </nav>
+    <section id="missions" class="row g-3" aria-live="polite">    </section>
   </main>
-
-  <!-- ==========================================================================
-       GAME REALM CONTAINER (ACTIVE INTERACTIVE GAME WORLD INTERFACE)
-       ========================================================================== -->
-  <div id="game-realm-container">
-
-    <!-- CANVAS LAYER OVERLAYING VIDEO -->
-    <canvas id="game-canvas"></canvas>
-
-    <!-- TOP NAVIGATION NAVBAR -->
-    <div id="game-navbar">
-      <div style="display: flex; align-items: center; gap: 10px;">
-        <span style="font-size: 12px; color: var(--ui-gold); font-weight: bold;">HUNT YOUR TIME</span>
-        <button class="nav-tab-btn" id="nav-btn-home">🌌 LANDING STORY</button>
-      </div>
-
-      <div class="nav-tabs">
-        <button class="nav-tab-btn active" id="nav-btn-quests">📜 QUESTS</button>
-        <button class="nav-tab-btn" id="nav-btn-planner">🗺️ PLANNER</button>
-        <button class="nav-tab-btn" id="nav-btn-saved">📽️ SAVED</button>
-        <button class="nav-tab-btn" id="nav-btn-rewards">🏰 REWARDS</button>
-        <button class="nav-tab-btn" id="nav-btn-profile">👤 PROFILE</button>
-        <button class="nav-tab-btn" id="nav-btn-logout" style="background: var(--ui-red); color: #fff;">🚪 LOGOUT</button>
-      </div>
-    </div>
-
-    <!-- HUD STATUS CARD -->
-    <div id="game-hud-bar">
-      <div class="pixel-box player-hud-card">
-        <div class="avatar-frame" id="btn-hud-avatar" title="Character Profile">
-          <span class="avatar-img" id="hud-avatar-icon" style="font-size: 26px;">🛡️</span>
-        </div>
-        <div class="player-details">
-          <div class="player-name-row">
-            <span class="player-name" id="hud-player-name">TimeHunter_01</span>
-            <span class="level-badge" id="hud-player-level">LVL 1</span>
+  <div class="modal fade" id="taskModal" tabindex="-1" aria-labelledby="taskHeading" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered"><div class="modal-content panel">
+      <div class="modal-header"><h2 class="modal-title" id="taskHeading">CREATE MISSION</h2><button class="btn pixel" data-bs-dismiss="modal">✕</button></div>
+      <form id="taskForm" class="modal-body">
+        <input id="taskId" type="hidden">
+        <label class="form-label" for="title">MISSION</label><input class="form-control mb-2" id="title" required>
+        <div class="row g-2 mb-2">
+          <div class="col-7">
+            <label class="form-label" for="category">CATEGORY</label>
+            <select class="form-select" id="category"><option>Study</option><option>Play</option><option>Meetings</option><option>Fitness</option><option>Social</option><option>Personal</option><option>Miscellaneous</option></select>
           </div>
-          <div style="font-family: var(--font-retro); font-size: 9px; color: var(--ui-gold);" id="hud-rank-title">ROOKIE HUNTER</div>
-          <div class="xp-bar-container">
-            <div class="xp-bar-fill" id="hud-xp-fill"></div>
-            <div class="xp-text" id="hud-xp-text">0 / 200 XP</div>
-          </div>
+          <div class="col-5"><label class="form-label" for="duration">MINUTES</label><input class="form-control" id="duration" type="number" min="1" value="25" required></div>
         </div>
-      </div>
-
-      <div style="display: flex; gap: 10px; align-items: center;">
-        <div class="pixel-box pixel-box-gold currency-widget">
-          <span class="pixel-icon coin-icon"></span>
-          <span id="hud-coins" style="color: var(--ui-gold); font-size: 11px;">100</span>
+        <div class="row g-2">
+          <div class="col-6"><label class="form-label" for="date">DATE</label><input class="form-control" id="date" type="date" required></div>
+          <div class="col-6"><label class="form-label" for="time">START TIME</label><input class="form-control" id="time" type="time" required></div>
         </div>
-        
-        <div class="pixel-box streak-widget">
-          <span class="pixel-icon fire-icon"></span>
-          <span id="hud-streak" style="color: #ff6600; font-size: 11px;">0d</span>
-        </div>
-
-        <button class="hud-btn" id="btn-game-sfx-toggle" title="Toggle Sound FX">🔊 SFX</button>
-        <button class="hud-btn" id="btn-game-music-toggle" title="Toggle Music">🎵 MUSIC</button>
-      </div>
-    </div>
-
-    <!-- CATEGORY FILTER BAR -->
-    <div style="display: flex; gap: 6px; overflow-x: auto; padding: 4px 0; z-index: 25; pointer-events: auto;">
-      <button class="hud-btn btn-cat-filter active" data-cat="ALL">ALL</button>
-      <button class="hud-btn btn-cat-filter" data-cat="Study">📚 Study</button>
-      <button class="hud-btn btn-cat-filter" data-cat="Play">🎮 Play</button>
-      <button class="hud-btn btn-cat-filter" data-cat="Meetings">📅 Meetings</button>
-      <button class="hud-btn btn-cat-filter" data-cat="Fitness">🏋 Fitness</button>
-      <button class="hud-btn btn-cat-filter" data-cat="Social">❤️ Social</button>
-      <button class="hud-btn btn-cat-filter" data-cat="Personal">🎯 Personal</button>
-      <button class="hud-btn btn-cat-filter" data-cat="Other">🌀 Misc</button>
-    </div>
-
-    <!-- BOTTOM ACTION BAR -->
-    <div id="bottom-game-hud">
-      <div class="quick-action-bar">
-        <div class="action-card-btn featured" id="btn-im-free-game">
-          <div class="action-icon">⚡</div>
-          <div class="action-label" style="color: var(--ui-gold); font-weight: bold;">I'M FREE</div>
-        </div>
-
-        <div class="action-card-btn" id="btn-create-quest-game">
-          <div class="action-icon">➕</div>
-          <div class="action-label">CREATE QUEST</div>
-        </div>
-
-        <div class="action-card-btn" id="btn-ai-master-game">
-          <div class="action-icon">🤖</div>
-          <div class="action-label">AI MASTER</div>
-        </div>
-      </div>
-
-      <div style="font-family: var(--font-retro); font-size: 10px; background: rgba(0,0,0,0.6); padding: 6px 10px; border: 2px solid #000;">
-        ⌨️ A/D or Arrows to Walk | Click Coins & NPCs
-      </div>
-    </div>
-
+        <button class="btn pixel gold w-100 mt-3">SAVE MISSION</button>
+      </form>
+    </div></div>
   </div>
-
-  <!-- RETRO DIALOGUE BOX -->
-  <div id="dialogue-container">
-    <div class="dialogue-box">
-      <div class="dialogue-portrait" id="dialogue-portrait">🦉</div>
-      <div class="dialogue-content">
-        <div class="dialogue-speaker" id="dialogue-speaker">Barnaby the Owl Wizard</div>
-        <div class="dialogue-text" id="dialogue-text">Welcome, Time Hunter! Idle minutes are hiding in your day... Will you let them escape, or turn them into XP?</div>
-        <div class="dialogue-next-arrow">▶ Click to continue</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ==========================================================================
-       MODALS & OVERLAYS
-       ========================================================================== -->
-
-  <!-- MODAL 0: CINEMATIC TRAILER OVERLAY -->
-  <div class="pixel-modal-backdrop" id="modal-trailer">
-    <div class="pixel-modal">
-      <div class="modal-header">
-        <div class="modal-title">🎬 OFFICIAL CINEMATIC TRAILER</div>
-        <button class="modal-close-btn">&times;</button>
-      </div>
-      <div class="modal-body" style="align-items: center; text-align: center;">
-        <video id="trailer-modal-video" controls autoplay muted playsinline poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Crect width='100%25' height='100%25' fill='%230f0b1e'/%3E%3C/svg%3E">
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-pixel-art-looping-landscape-41551-large.mp4" type="video/mp4">
-        </video>
-        <div style="display: flex; gap: 10px; margin-top: 10px;">
-          <button class="hud-btn" id="btn-trailer-toggle-mute">🔊 UNMUTE AUDIO</button>
-          <button class="hud-btn modal-close-btn" style="width: auto; padding: 8px 16px;">CLOSE TRAILER</button>
+  <div class="modal fade" id="freeModal" tabindex="-1" aria-labelledby="freeHeading" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered"><div class="modal-content panel">
+      <div class="modal-header"><h2 class="modal-title" id="freeHeading">HOW MUCH FREE TIME?</h2><button class="btn pixel" data-bs-dismiss="modal">✕</button></div>
+      <div class="modal-body">
+        <div class="d-flex gap-2 mb-3">
+          <button type="button" class="btn pixel free" data-minutes="15">15 MIN</button>
+          <button type="button" class="btn pixel free" data-minutes="30">30 MIN</button>
+          <button type="button" class="btn pixel free" data-minutes="60">1 HOUR</button>
         </div>
+        <label class="form-label" for="freeStart">CUSTOM WINDOW</label>
+        <div class="d-flex gap-2">
+          <input class="form-control" id="freeStart" type="time" value="14:00">
+          <input class="form-control" id="freeEnd" type="time" value="15:00">
+          <button type="button" class="btn pixel gold" id="match">FIND</button>
+        </div>
+        <div id="suggestion" class="mt-3"></div>
       </div>
-    </div>
+    </div></div>
   </div>
-
-<!-- MODAL 1: AUTHENTICATION -->
-  <div class="pixel-modal-backdrop" id="modal-auth">
-    <div class="pixel-modal">
-      <div class="modal-header">
-        <div class="modal-title" id="auth-modal-title">🔐 HUNTER AUTHENTICATION</div>
-        <button class="modal-close-btn">&times;</button>
-    
-         
-         
-
- 
-          
-
-         
-             
-             
-            
-        
-
-              
-      
-
-
-
-             
-               
-           
-      
-
- 
-     
-      
-       
-
-     
-
-
-        
-       
-
-        
-    
-  
-
-
-  
+  <div class="modal fade" id="timerModal" tabindex="-1" aria-labelledby="timerHeading" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered"><div class="modal-content panel text-center">
+      <div class="modal-header"><h2 class="modal-title" id="timerHeading">MISSION TIMER</h2><button class="btn pixel" data-bs-dismiss="modal">✕</button></div>
+      <div class="modal-body"><div id="timerTitle"></div><div class="clock" id="clock">25:00</div>
+        <button class="btn pixel cyan" id="pause">PAUSE</button> <button class="btn pixel" id="reset">RESET</button> <button class="btn pixel gold" id="timerDone">COMPLETE</button>
+      </div>
+    </div></div>
+  </div>
+  <div id="reward" class="reward" hidden role="status" aria-live="polite">
+    <video src="soule.webm" muted playsinline aria-hidden="true"></video>
+    <div class="reward-copy"><strong>MISSION COMPLETE!</strong><span id="rewardText">SOUL DRINK EARNED!</span></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
