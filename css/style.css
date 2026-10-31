@@ -63,3 +63,10 @@ body {
   text-align: center;
   text-shadow: 3px 3px #0d0a1a;
 }
+
+.hero h1 {
+  margin: .8rem 0 1.5rem;
+  color: var(--gold);
+  font-size: clamp(18px, 4vw, 42px);
+  line-height: 1.4;
+}
