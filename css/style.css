@@ -19,3 +19,21 @@ html {
   background: transparent;
   scroll-behavior: smooth;
 }
+
+body {
+  min-width: 0;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: clip;
+  color: #fff;
+  background: transparent;
+  font: clamp(9px, .75vw, 11px)/1.6 'Press Start 2P', monospace;
+}
+
+.hero {
+  position: relative;
+  z-index: 2;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+}
