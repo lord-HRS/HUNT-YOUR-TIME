@@ -91,3 +91,17 @@ body {
   background: rgba(13, 10, 26, .28);
 }
 
+.scroll {
+  position: absolute;
+  z-index: 3;
+  bottom: 2.5rem;
+  left: 50%;
+  max-width: 90vw;
+  transform: translateX(-50%);
+  color: var(--gold);
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .5s;
+  white-space: nowrap;
+}
