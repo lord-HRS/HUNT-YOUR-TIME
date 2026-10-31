@@ -1,1 +1,26 @@
+# Hunt Your Time
+
+Hunt Your Time is a small pixel-art productivity dashboard. It uses the supplied
+fantasy landscape video as its background and keeps mission data in the
+browser's `localStorage`.
+
+## Features
+
+- Create, edit, delete, and complete missions.
+- Set a category, duration, date, and start time.
+- Filter active missions by category.
+- Match a mission to a 15-minute, 30-minute, one-hour, or custom free-time window.
+- Start, pause, reset, or complete a mission timer.
+- Earn Soul Drinks when a mission is completed, with the supplied reward animation.
+- Toggle background video sound.
+- Responsive Bootstrap 5 layout for desktop, tablet, and mobile screens.
+
+## Run locally
+
+Open `index.html` directly in a browser, or serve the `hunt-your-time` folder
+with a local development server such as VS Code Live Server. A local server is
+recommended when testing video playback.
+
+Mission data is stored under the `HUNT_YOUR_TIME_DATA_V3` localStorage key.
+Clearing site data resets the dashboard to its example missions.
 
