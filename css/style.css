@@ -76,3 +76,9 @@ body {
   color: var(--cyan);
   font-size: clamp(8px, 1vw, 12px);
 }
+
+.sound-control {
+  position: absolute;
+  top: var(--space);
+  right: var(--space);
+}
