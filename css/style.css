@@ -8,3 +8,14 @@
   --border: #080611;
   --space: clamp(.75rem, 2vw, 1.25rem);
 }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: transparent;
+  scroll-behavior: smooth;
+}
