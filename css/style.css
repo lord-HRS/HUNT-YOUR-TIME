@@ -1,45 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
-:root {
-  --gold: #ffcf33;
-  --cyan: #42f5e9;
-  --ink: #0d0a1a;
-  --panel: rgba(25, 18, 49, .92);
-  --border: #080611;
-  --space: clamp(.75rem, 2vw, 1.25rem);
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html {
-  background: transparent;
-  scroll-behavior: smooth;
-}
 
 body {
-  min-width: 0;
   min-height: 100vh;
-  margin: 0;
-  overflow-x: clip;
-  color: #fff;
-  background: transparent;
-  font: clamp(9px, .75vw, 11px)/1.6 'Press Start 2P', monospace;
+  background: #090812;
 }
 
-.hero {
-  position: relative;
-  z-index: 2;
-  min-height: 100svh;
-  display: grid;
-  place-items: center;
-}
-
-#bg-video,
-.shade {
+#background {
   position: fixed;
   inset: 0;
   width: 100%;
@@ -47,61 +12,43 @@ body {
   object-fit: cover;
 }
 
-#bg-video {
-  z-index: 0;
-  pointer-events: none;
-}
-
-.shade {
-  z-index: 1;
-  background: linear-gradient(180deg, rgba(13, 10, 26, .25), rgba(13, 10, 26, .7));
-  pointer-events: none;
-}
-
-.hero-content {
-  padding: 1rem;
-  text-align: center;
-  text-shadow: 3px 3px #0d0a1a;
-}
-
-.hero h1 {
-  margin: .8rem 0 1.5rem;
-  color: var(--gold);
-  font-size: clamp(18px, 4vw, 42px);
-  line-height: 1.4;
-}
-
-.eyebrow {
-  margin: 0;
-  color: var(--cyan);
-  font-size: clamp(8px, 1vw, 12px);
-}
-
+main,
 .sound-control {
-  position: absolute;
-  top: var(--space);
-  right: var(--space);
-}
-
-#app {
   position: relative;
-  z-index: 2;
-  min-height: 100vh;
-  padding: 4rem var(--space) 7rem !important;
-  background: rgba(13, 10, 26, .28);
+  z-index: 1;
 }
 
-.scroll {
-  position: absolute;
-  z-index: 3;
-  bottom: 2.5rem;
-  left: 50%;
-  max-width: 90vw;
-  transform: translateX(-50%);
-  color: var(--gold);
-  text-align: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .5s;
-  white-space: nowrap;
+dialog {
+  max-width: 500px;
+  width: 90%;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, .75);
+}
+
+.brand-title {
+  font-family: "MinecraftiaRegular", monospace;
+  color: #ffd166;
+  letter-spacing: .12em;
+  text-shadow: 0 4px 24px rgba(255, 209, 102, .2);
+}
+
+.minecraft-btn {
+  font-family: "MinecraftiaRegular", monospace;
+  background: #737373;
+  box-shadow: inset -2px -4px #373737, inset 2px 2px #fff;
+  border: 2px solid #000;
+  border-radius: 0;
+  text-shadow: 2px 2px #222;
+}
+
+.minecraft-btn:hover {
+  background: #5c628e;
+  box-shadow: inset -2px -4px #2e3146, inset 2px 2px #a8b0e0;
+  color: #fff0a6;
+}
+
+.minecraft-btn:active {
+  box-shadow: inset 2px 2px #2e3146, inset -2px -2px #a8b0e0;
 }
