@@ -9,9 +9,3 @@ document.addEventListener("submit", (e) => {
   isTask ? (taskModal.close(), f.reset()) : (workSuccess.classList.remove("d-none"), workSubmit.disabled = true);
 });
 
-workModal.onclose = () => { workForm.reset(); workSuccess.classList.add("d-none"); workSubmit.disabled = false; };
-
-soundToggle.onclick = () => {
-  backgroundAudio.muted = false;
-  soundToggle.textContent = backgroundAudio.paused ? (backgroundAudio.play(), "SOUND ON") : (backgroundAudio.pause(), "SOUND OFF");
-};
