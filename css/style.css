@@ -1,54 +1,86 @@
-
 body {
   min-height: 100vh;
+  display: grid;
+  place-content: center;
+  text-align: center;
   background: #090812;
+  color: #fff;
+  margin: 0;
 }
 
-#background {
+#bg {
   position: fixed;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: 0;
 }
 
-main,
-.sound-control {
+main {
   position: relative;
   z-index: 1;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.top-left {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 10;
+}
+
+.top-right {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
 }
 
 dialog {
-  max-width: 500px;
+  max-width: 480px;
   width: 90%;
+  padding: 1.5rem;
+  background: #1b1b26;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
 dialog::backdrop {
-  background: rgba(0, 0, 0, .75);
+  background: rgba(0, 0, 0, 0.75);
 }
 
-.brand-title {
+.title {
   font-family: "MinecraftiaRegular", monospace;
   color: #ffd166;
-  letter-spacing: .12em;
-  text-shadow: 0 4px 24px rgba(255, 209, 102, .2);
+  font-size: 2.5rem;
+  letter-spacing: 0.12em;
+  text-shadow: 0 4px 24px rgba(255, 209, 102, 0.2);
+  margin: 0;
 }
 
-.minecraft-btn {
+.btn-mc {
   font-family: "MinecraftiaRegular", monospace;
+  color: #fff;
   background: #737373;
+  padding: 0.5rem 1.25rem;
   box-shadow: inset -2px -4px #373737, inset 2px 2px #fff;
   border: 2px solid #000;
   border-radius: 0;
   text-shadow: 2px 2px #222;
+  cursor: pointer;
+  text-decoration: none;
 }
 
-.minecraft-btn:hover {
+.btn-mc:hover {
   background: #5c628e;
   box-shadow: inset -2px -4px #2e3146, inset 2px 2px #a8b0e0;
   color: #fff0a6;
 }
 
-.minecraft-btn:active {
+.btn-mc:active {
   box-shadow: inset 2px 2px #2e3146, inset -2px -2px #a8b0e0;
 }
