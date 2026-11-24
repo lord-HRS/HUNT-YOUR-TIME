@@ -1,11 +1,12 @@
-const save = (k, v) => localStorage.setItem(k, JSON.stringify([...JSON.parse(localStorage.getItem(k) || "[]"), v]));
+const tasks = [];
+const submissions = [];
 
 document.addEventListener("submit", (e) => {
   e.preventDefault();
   let f = e.target, isTask = f.id === "taskForm";
   let d = Object.fromEntries(new FormData(f));
   if (!isTask) d.file = f.file?.files[0]?.name || "";
-  save(isTask ? "tasks" : "submissions", d);
+  (isTask ? tasks : submissions).push(d);
   isTask ? (taskModal.close(), f.reset()) : (workSuccess.classList.remove("d-none"), workSubmit.disabled = true);
 });
 
