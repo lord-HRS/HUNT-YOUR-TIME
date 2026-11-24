@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en" data-bs-theme="dark">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,72 +10,88 @@
   <link href="css/style.css" rel="stylesheet">
 </head>
 
-  <body class="d-flex flex-column justify-content-center align-items-center text-center">
-    <video id="background" autoplay muted loop playsinline>
-      <source src="hutbgvid.mp4" type="video/mp4">
-    </video>
-    <audio id="backgroundAudio" src="assets/audio/hutbgvid.mp3" loop muted preload="auto"></audio>
-    <button class="btn minecraft-btn text-white position-fixed top-0 end-0 m-3 px-3 py-2 sound-control"
-      id="soundToggle">SOUND OFF</button>
+<body>
+  <video id="bg" autoplay muted loop playsinline>
+    <source src="hutbgvid.mp4" type="video/mp4">
+  </video>
+  <audio id="bgAudio" src="assets/audio/hutbgvid.mp3" loop muted preload="auto"></audio>
 
-      <main class="d-grid gap-4 py-5">
-        <h1 class="display-5 fw-bold brand-title mb-0">HUNT YOUR TIME</h1>
-          <div class="d-grid d-sm-flex gap-3 justify-content-center">
-            <button class="btn minecraft-btn text-white px-4 py-2" onclick="taskModal.showModal()">SAVE MY TASK</button>
-            <button class="btn minecraft-btn text-white px-4 py-2" onclick="workModal.showModal()">GET WORK
-              DONE</button>
-          </div>
-      </main>
+  <button class="btn-mc top-left" onclick="loginModal.showModal()">LOGIN</button>
+  <button class="btn-mc top-right" id="soundBtn">SOUND OFF</button>
 
-      <dialog id="taskModal" class="border border-secondary bg-dark text-white rounded p-4 shadow">
-        <form id="taskForm">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h2 class="fs-5 text-info mb-0">Save my task</h2>
-            <button type="button" class="btn minecraft-btn text-white px-2 py-0" onclick="taskModal.close()">×</button>
-          </div>
-          <div class="d-grid gap-3 text-start">
-            <div><label class="form-label" for="taskName">Task name</label><input class="form-control" id="taskName"
-                name="name" required></div>
-            <div><label class="form-label" for="taskDescription">Description</label><textarea class="form-control"
-                id="taskDescription" name="description" rows="3"></textarea></div>
-            <div><label class="form-label" for="taskCategory">Category</label><select class="form-select"
-                id="taskCategory" name="category" required>
-                <option value="" selected disabled>Choose a category</option>
-                <option>Study</option>
-                <option>Work</option>
-                <option>Health</option>
-                <option>Personal</option>
-              </select></div>
-            <div><label class="form-label" for="taskReminder">Reminder</label><input class="form-control"
-                type="datetime-local" id="taskReminder" name="reminder"></div>
-          </div>
-          <div class="text-end mt-3"><button class="btn minecraft-btn text-white" type="submit">Save</button></div>
-        </form>
-      </dialog>
+  <main>
+    <h1 class="title">HUNT YOUR TIME</h1>
+    <div class="d-flex gap-3 justify-content-center">
+      <button class="btn-mc" onclick="taskModal.showModal()">SAVE MY TASK</button>
+      <button class="btn-mc" onclick="workModal.showModal()">GET WORK DONE</button>
+    </div>
+  </main>
 
-      <dialog id="workModal" class="border border-secondary bg-dark text-white rounded p-4 shadow">
-        <form id="workForm">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h2 class="fs-5 text-warning mb-0">Get work done</h2>
-            <button type="button" class="btn minecraft-btn text-white px-2 py-0" onclick="workModal.close()">×</button>
-          </div>
-          <div class="d-grid gap-3 text-start">
-            <div><label class="form-label" for="workTitle">Work title</label><input class="form-control" id="workTitle"
-                name="title" required></div>
-            <div><label class="form-label" for="workDescription">Description</label><textarea class="form-control"
-                id="workDescription" name="description" rows="3" required></textarea></div>
-            <div><label class="form-label" for="rewardCoins">Reward coins</label><input class="form-control"
-                type="number" id="rewardCoins" name="coins" min="0" value="10" required></div>
-            <div><label class="form-label" for="workFile">Upload file</label><input class="form-control" type="file"
-                id="workFile" name="file"></div>
-            <div class="alert alert-success d-none mb-0" id="workSuccess">Work submitted and saved in this browser.
-            </div>
-          </div>
-          <div class="text-end mt-3"><button class="btn minecraft-btn text-white" type="submit" id="workSubmit">Submit
-              Work</button></div>
-        </form>
-      </dialog>
+  <dialog id="loginModal">
+    <form id="loginForm"
+      onsubmit="event.preventDefault(); event.stopPropagation(); localStorage.setItem('user', this.user.value); loginModal.close();">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="fs-5 text-warning mb-0">Login</h2>
+        <button type="button" class="btn-mc px-2 py-0" onclick="loginModal.close()">×</button>
+      </div>
+      <div class="d-grid gap-3 text-start">
+        <div><label class="form-label" for="loginUser">Username</label><input class="form-control" id="loginUser"
+            name="user" required></div>
+        <div><label class="form-label" for="loginPass">Password</label><input class="form-control" type="password"
+            id="loginPass" name="pass" required></div>
+      </div>
+      <div class="text-end mt-4"><button class="btn-mc" type="submit">Log In</button></div>
+    </form>
+  </dialog>
 
-      <script src="js/script.js"></script>
-  </body>
+  <dialog id="taskModal">
+    <form id="taskForm">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="fs-5 text-info mb-0">Save my task</h2>
+        <button type="button" class="btn-mc px-2 py-0" onclick="taskModal.close()">×</button>
+      </div>
+      <div class="d-grid gap-3 text-start">
+        <div><label class="form-label" for="taskName">Task name</label><input class="form-control" id="taskName"
+            name="name" required></div>
+        <div><label class="form-label" for="taskDescription">Description</label><textarea class="form-control"
+            id="taskDescription" name="description" rows="3"></textarea></div>
+        <div><label class="form-label" for="taskCategory">Category</label><select class="form-select" id="taskCategory"
+            name="category" required>
+            <option value="" selected disabled>Choose a category</option>
+            <option>Study</option>
+            <option>Work</option>
+            <option>Health</option>
+            <option>Personal</option>
+          </select></div>
+        <div><label class="form-label" for="taskReminder">Reminder</label><input class="form-control"
+            type="datetime-local" id="taskReminder" name="reminder"></div>
+      </div>
+      <div class="text-end mt-3"><button class="btn-mc" type="submit">Save</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="workModal">
+    <form id="workForm">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="fs-5 text-warning mb-0">Get work done</h2>
+        <button type="button" class="btn-mc px-2 py-0" onclick="workModal.close()">×</button>
+      </div>
+      <div class="d-grid gap-3 text-start">
+        <div><label class="form-label" for="workTitle">Work title</label><input class="form-control" id="workTitle"
+            name="title" required></div>
+        <div><label class="form-label" for="workDescription">Description</label><textarea class="form-control"
+            id="workDescription" name="description" rows="3" required></textarea></div>
+        <div><label class="form-label" for="rewardCoins">Reward coins</label><input class="form-control" type="number"
+            id="rewardCoins" name="coins" min="0" value="10" required></div>
+        <div><label class="form-label" for="workFile">Upload file</label><input class="form-control" type="file"
+            id="workFile" name="file"></div>
+        <div class="alert alert-success d-none mb-0" id="workSuccess">Work submitted and saved in this browser.</div>
+      </div>
+      <div class="text-end mt-3"><button class="btn-mc" type="submit" id="workSubmit">Submit Work</button></div>
+    </form>
+  </dialog>
+
+  <script src="js/script.js"></script>
+</body>
+
 </html>
