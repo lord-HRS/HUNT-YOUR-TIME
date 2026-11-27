@@ -16,13 +16,16 @@ body {
   object-fit: cover;
 }
 
-#vanta-bg {
+#vanta-bg,
+#particles-bg {
   z-index: 0;
+}
+
+#vanta-bg {
   pointer-events: none;
 }
 
 #particles-bg {
-  z-index: 0;
   mix-blend-mode: screen;
 }
 
