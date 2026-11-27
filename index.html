@@ -37,11 +37,11 @@
       </div>
       <div class="d-grid gap-3 text-start">
         <div><label class="form-label" for="taskName">Task name</label><input class="form-control" id="taskName"
-            name="name" required></div>
+            required></div>
         <div><label class="form-label" for="taskDescription">Description</label><textarea class="form-control"
-            id="taskDescription" name="description" rows="3"></textarea></div>
+            id="taskDescription" rows="3"></textarea></div>
         <div><label class="form-label" for="taskCategory">Category</label><select class="form-select" id="taskCategory"
-            name="category" required>
+            required>
             <option value="" selected disabled>Choose a category</option>
             <option>Study</option>
             <option>Work</option>
@@ -49,7 +49,7 @@
             <option>Personal</option>
           </select></div>
         <div><label class="form-label" for="taskReminder">Reminder</label><input class="form-control"
-            type="datetime-local" id="taskReminder" name="reminder"></div>
+            type="datetime-local" id="taskReminder"></div>
       </div>
       <div class="text-end mt-3"><button class="btn minecraft-btn text-white" type="submit">Save</button></div>
     </form>
@@ -63,14 +63,14 @@
       </div>
       <div class="d-grid gap-3 text-start">
         <div><label class="form-label" for="workTitle">Work title</label><input class="form-control" id="workTitle"
-            name="title" required></div>
+            required></div>
         <div><label class="form-label" for="workDescription">Description</label><textarea class="form-control"
-            id="workDescription" name="description" rows="3" required></textarea></div>
+            id="workDescription" rows="3" required></textarea></div>
         <div><label class="form-label" for="rewardCoins">Reward coins</label><input class="form-control" type="number"
-            id="rewardCoins" name="coins" min="0" value="10" required></div>
+            id="rewardCoins" min="0" value="10" required></div>
         <div><label class="form-label" for="workFile">Upload file</label><input class="form-control" type="file"
-            id="workFile" name="file"></div>
-        <div class="alert alert-success d-none mb-0" id="workSuccess">Work submitted and saved in this browser.
+            id="workFile"></div>
+        <div class="alert alert-success d-none mb-0" id="workSuccess">Work submitted.
         </div>
       </div>
       <div class="text-end mt-3"><button class="btn minecraft-btn text-white" type="submit" id="workSubmit">Submit
